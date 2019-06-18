@@ -76,3 +76,6 @@ create table `order`
     order_date datetime default current_timestamp
 ) default charset utf8mb4 engine = InnoDB;
 
+insert into user(account,password,username,phone,mobile,postal_code,address,email) values
+('test','1234','test','010-1234-1234','010-1234-1234','12345','대구광역시 달성군','test@dgsw.hs.kr');
+
