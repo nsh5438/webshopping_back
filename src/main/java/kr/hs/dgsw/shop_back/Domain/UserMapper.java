@@ -13,6 +13,6 @@ public interface UserMapper {
     @Select("select id, account, username, email, created, updated from user")
     List<User> findAll();
 
-    User login(User user);
+    User login(User user);  
     Long addUser(User user);
 }
