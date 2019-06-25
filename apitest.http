@@ -50,3 +50,8 @@ Content-Type: application/json
 }
 
 ###
+
+GET http://localhost:8080/product/getlist/1
+Accept: application/json
+
+###
