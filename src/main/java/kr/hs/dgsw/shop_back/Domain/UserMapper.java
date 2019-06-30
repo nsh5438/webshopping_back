@@ -15,4 +15,7 @@ public interface UserMapper {
 
     User login(User user);  
     Long addUser(User user);
+    String findByAccount(String account);
+    int updatePoint(User user);
+    int getPoint(Long id);
 }

@@ -55,3 +55,66 @@ GET http://localhost:8080/product/getlist/1
 Accept: application/json
 
 ###
+
+GET http://localhost:8080/product/getBestList
+Accept: application/json
+
+###
+
+GET http://localhost:8080/product/findById/2
+Accept: application/json
+
+###
+
+GET http://localhost:8080/review/getReview/5
+Accept: application/json
+
+###
+
+GET http://localhost:8080/order/findById/1
+Accept: application/json
+
+###
+
+POST http://localhost:8080/order/addOrder
+Content-Type: application/json
+
+{
+   "user_id" : 1,
+  "product_id" : 2,
+  "count" : 2,
+  "all_total": 33820
+}
+
+###
+
+
+DELETE http://localhost:8080/cart/delete/2
+Accept: application/json
+
+###
+
+PUT http://localhost:8080/cart/updateIsOrder/1
+Content-Type: application/json
+
+###
+
+GET http://localhost:8080/user/findByAccount/1
+Accept: application/json
+
+###
+
+GET http://localhost:8080/user/getPoint/1
+Accept: application/json
+
+###
+
+PUT http://localhost:8080/cart/updateCount
+Content-Type: application/json
+
+{
+  "id" : 1,
+  "count" : 2
+}
+
+###

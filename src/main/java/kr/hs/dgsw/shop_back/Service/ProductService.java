@@ -7,4 +7,8 @@ import java.util.List;
 public interface ProductService {
 
     List<Product> getList(Long id);
+
+    Product findById(Long id);
+
+    List<Product> getBestList();
 }

@@ -8,4 +8,7 @@ import java.util.List;
 public interface ProductMapper {
 
     List<Product> getList(Long id);
+    Product findById(Long id);
+    List<Product> getBestList();
+
 }

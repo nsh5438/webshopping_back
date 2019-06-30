@@ -28,4 +28,13 @@ public class UserController {
         return this.userService.addUser(user);
     }
 
+    @GetMapping(value = "/findByAccount/{account}")
+    public String findByAccount(@PathVariable String account) { return this.userService.findByAccount(account); }
+
+    @PutMapping(value = "/updatePoint")
+    public int updatePoint(@RequestBody User user) {return this.userService.updatePoint(user);}
+
+    @GetMapping(value = "/getPoint/{id}")
+    public int getPoint(@PathVariable Long id) {return this.userService.getPoint(id);}
+
 }

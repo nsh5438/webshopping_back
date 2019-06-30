@@ -12,6 +12,5 @@ public class Order {
     private Long product_id;
     private int count;
     private int all_total;
-    private String pay_way;
     private LocalDateTime order_date;
 }

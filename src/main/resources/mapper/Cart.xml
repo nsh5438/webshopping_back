@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="kr.hs.dgsw.shop_back.Domain.CartMapper">
+    <select id="findById" parameterType="Long" resultType="HashMap">
+        select c.id, p.id as product_id , p.name, p.selling_price, p.point, c.count
+        from cart c, product p
+        where c.product_id = p.id and c.user_id = #{id} and is_order = 'X'
+        GROUP BY c.product_id ;
+    </select>
+
+    <insert id="addCart" parameterType="kr.hs.dgsw.shop_back.Domain.Cart">
+        insert into cart(user_id, product_id, `count`, is_order)
+        values(#{user_id}, #{product_id}, #{count},'X')
+        <selectKey keyProperty="id" resultType="Long">
+            select last_insert_id()
+        </selectKey>
+    </insert>
+
+    <delete id="delete" parameterType="Long">
+        delete from cart where id = #{id}
+    </delete>
+
+    <update id="updateIsOrder" parameterType="Long">
+        update cart set is_order = 'O' where id = #{id}
+    </update>
+
+    <update id="updateCount" parameterType="kr.hs.dgsw.shop_back.Domain.Cart">
+        update cart set `count` = #{count} where id = #{id}
+    </update>
+</mapper>

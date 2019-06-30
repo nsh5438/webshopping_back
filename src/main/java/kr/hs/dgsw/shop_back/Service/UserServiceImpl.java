@@ -26,4 +26,19 @@ public class UserServiceImpl implements UserService {
     public List<User> findAll() {
         return this.userMapper.findAll();
     }
+
+    @Override
+    public String findByAccount(String account) {
+        return this.userMapper.findByAccount(account);
+    }
+
+    @Override
+    public int updatePoint(User user) {
+        return this.userMapper.updatePoint(user);
+    }
+
+    @Override
+    public int getPoint(Long id) {
+        return this.userMapper.getPoint(id);
+    }
 }

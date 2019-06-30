@@ -7,4 +7,14 @@
         select * from product where category = #{id}
     </select>
 
+    <select id="findById" parameterType="Long" resultType="kr.hs.dgsw.shop_back.Domain.Product">
+        select * from product where id = #{id}
+    </select>
+
+    <select id="getBestList" resultType="HashMap">
+        select p.id, p.name, o.count, p.category, p.detail_info, p.buy_info, p.company, p.selling_price, p.point, p.img_name, p.img_path ,sum(o.count)
+from `order` o, product p
+where o.product_id = p.id
+GROUP BY o.product_id order by sum(o.count) desc  ;
+    </select>
 </mapper>

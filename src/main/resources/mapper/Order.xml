@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="kr.hs.dgsw.shop_back.Domain.OrderMapper">
+    <select id="findById" parameterType="Long" resultType="HashMap">
+        select o.id,p.id as product_id, p.name, p.selling_price, p.point, sum(if(u.id = #{id},o.count,0)) as ct_total
+    from `order` o, product p, user u
+where o.product_id = p.id and o.user_id = #{id}
+group by o.product_id;
+    </select>
+
+    <insert id="addOrder" parameterType="kr.hs.dgsw.shop_back.Domain.Order">
+        insert into `order`(user_id, product_id, `count`, all_total)
+        values(#{user_id}, #{product_id}, #{count}, #{all_total})
+        <selectKey keyProperty="id" resultType="Long">
+            select last_insert_id()
+        </selectKey>
+    </insert>
+</mapper>

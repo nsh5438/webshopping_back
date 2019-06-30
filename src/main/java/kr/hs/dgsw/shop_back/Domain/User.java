@@ -16,6 +16,7 @@ public class User {
     private String postal_code;
     private String address;
     private String email;
+    private Long point;
     private LocalDateTime created;
     private LocalDateTime updated;
 }

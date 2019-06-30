@@ -17,4 +17,14 @@ public class ProductServiceImpl implements ProductService {
     public List<Product> getList(Long id) {
         return this.productMapper.getList(id);
     }
+
+    @Override
+    public Product findById(Long id) {
+        return this.productMapper.findById(id);
+    }
+
+    @Override
+    public List<Product> getBestList() {
+        return this.productMapper.getBestList();
+    }
 }

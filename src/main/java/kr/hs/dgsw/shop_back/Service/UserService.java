@@ -10,4 +10,7 @@ public interface UserService {
     Long addUser(User user);
     User login(User user);
     List<User> findAll();
+    String findByAccount(String account);
+    int updatePoint(User user);
+    int getPoint(Long id);
 }

@@ -17,6 +17,7 @@ public class Product {
     private int selling_price;
     private int point;
     private String img_path;
+    private String img_name;
     private LocalDateTime created;
     private LocalDateTime updated;
 }

@@ -19,4 +19,10 @@ public class ProductController {
     public List<Product> getList(@PathVariable Long id){
         return this.productService.getList(id);
     }
+
+    @GetMapping("/getBestList")
+    public List<Product> getBestList() { return this.productService.getBestList(); }
+
+    @GetMapping("/findById/{id}")
+    public Product findById(@PathVariable Long id) { return this.productService.findById(id); }
 }
